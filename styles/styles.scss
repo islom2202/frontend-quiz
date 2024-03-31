@@ -1,0 +1,11 @@
+@forward "./colors";
+@forward "./typography";
+
+@forward "./blocks/header";
+*{
+  font-size: 65.2%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}

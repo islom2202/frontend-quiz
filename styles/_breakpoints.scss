@@ -1,0 +1,17 @@
+$mobile: (
+  width: 375px,
+  padding-inline: 5%
+);
+$tablet: (
+  width: 765px,
+  padding-inline: 7%
+);
+$desktop: (
+  width: 1450px,
+  padding-inline: 12%
+);
+@mixin response($width){
+  @media (min-width: $width) {
+    @content;
+  }
+}

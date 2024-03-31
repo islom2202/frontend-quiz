@@ -1,0 +1,25 @@
+@use "../breakpoints" as *;
+@use "../colors" as *;
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: map-get($mobile, padding-inline);
+    &__switcher{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      &__toggler{
+        color: $purple;
+        width: 2rem;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+  
+// tablet
+@include response(map-get($tablet, width)){
+  .header{
+    padding-inline: map-get($tablet, padding-inline);
+  }
+}
