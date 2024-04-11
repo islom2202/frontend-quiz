@@ -5,14 +5,36 @@
     display: flex;
     justify-content: space-between;
     padding-inline: map-get($mobile, padding-inline);
+    padding-block: 2rem;
     &__switcher{
       display: flex;
       align-items: center;
       gap: 1rem;
-      &__toggler{
-        color: $purple;
-        width: 2rem;
-        aspect-ratio: 1/1;
+      &__toggleWrapper{
+        width: 6rem;
+        height: 3rem;
+        background-color: $purple;
+        border-radius: 5rem;
+        position: relative;
+        &__checkbox{
+          opacity: 0;
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          cursor: pointer;
+        }
+        &__toggle{
+          height: 85%;
+          width: 45%;
+          border-radius: 5rem;
+          background-color: $white;
+          display: block;
+          position: absolute;
+          inset: .2rem auto .2rem .2rem;
+        }
+        &:has(&__checkbox:checked) &__toggle{
+          inset: .2rem .2rem .2rem auto;
+        }
       }
     }
   }
@@ -21,5 +43,13 @@
 @include response(map-get($tablet, width)){
   .header{
     padding-inline: map-get($tablet, padding-inline);
+    padding-block: 5rem;
+  }
+}
+
+// desktop
+@include response(map-get($desktop, width)){
+  .header{
+    padding-inline: map-get($desktop, padding-inline);
   }
 }
