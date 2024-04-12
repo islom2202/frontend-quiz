@@ -11,11 +11,15 @@ $fontsizes:(
   p: 2rem,
   input: 2rem,
   select: 2rem,
-  option: 2rem
+  option: 2rem,
+  span: inherit
 );
 
 @each $font, $size in $fontsizes {
   #{$font}{
     font-size: $size;
   }
+}
+h1, h2{
+  font-weight: 300;
 }

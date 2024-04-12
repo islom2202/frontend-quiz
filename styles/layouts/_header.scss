@@ -1,18 +1,23 @@
-@use "../breakpoints" as *;
-@use "../colors" as *;
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/colors" as *;
 
   .header{
     display: flex;
     justify-content: space-between;
     padding-inline: map-get($mobile, padding-inline);
     padding-block: 2rem;
+    figure{
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
     &__switcher{
       display: flex;
       align-items: center;
       gap: 1rem;
       &__toggleWrapper{
-        width: 6rem;
-        height: 3rem;
+        width: 5rem;
+        height: 2.5rem;
         background-color: $purple;
         border-radius: 5rem;
         position: relative;
