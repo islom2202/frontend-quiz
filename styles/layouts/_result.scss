@@ -1,0 +1,36 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/mixins" as *;
+@use '../abstracts/colors' as *;
+
+// mobile
+.result{
+  padding-inline: map-get($mobile, padding-inline);
+  margin-block: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  &__heading span{
+    font-weight: 600;
+  }
+  &__body{
+    display:  grid;
+    &__content{
+      border: 1px solid;
+    }
+  }
+}
+
+// tablet
+@include response(map-get($tablet, width)){
+  .result{
+    padding-inline: map-get($tablet, padding-inline);
+    padding-block: 5rem;
+  }
+}
+
+// desktop
+@include response(map-get($desktop, width)){
+  .result{
+    padding-inline: map-get($desktop, padding-inline);
+  }
+}

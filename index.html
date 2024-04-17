@@ -9,21 +9,106 @@
 <body>
   <header class="header">
     <figure>
-      <img src="" alt="">
-      <figcaption></figcaption>
+      <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+      <figcaption>
+        <h1>HTML</h1>
+      </figcaption>
     </figure>
     <div class="header__switcher">
-      <img src="assets/icons/icon-sun-dark.svg" alt="sun-icon">
+      <img src="assets/icons/icon-sun-dark.svg" alt="sun-icon" class="js-sun" draggable="false">
       <div class="header__switcher__toggleWrapper">
-        <input type="checkbox" class="header__switcher__toggleWrapper__checkbox">
+        <input type="checkbox" class="header__switcher__toggleWrapper__checkbox js-theme-toggler">
         <span class="header__switcher__toggleWrapper__toggle"></span>
       </div>
-      <img src="assets/icons/icon-moon-dark.svg" alt="moon-icon">
+      <img src="assets/icons/icon-moon-dark.svg" alt="moon-icon" class="js-moon" draggable="false">
     </div>
   </header>
   <main>
-    <h1>fdf</h1>
-    <h2>hey</h2>
+    <!--MENU-->
+    <article class="menu">
+      <div>
+        <h2>
+          Welcome to the <br>
+          <span>Frontend Quiz!</span>
+        </h2>
+        <p>
+          Pick a subject to get started.
+        </p>
+      </div>
+    <aside>
+      <button>
+        <img src="assets/icons/icon-html.svg" alt="html" class="icon-html">
+        <h4>HTML</h4>
+      </button>
+      <button>
+        <img src="assets/icons/icon-css.svg" alt="css" class="icon-css">
+        <h4>CSS</h4>
+      </button>
+      <button>
+        <img src="assets/icons/icon-js.svg" alt="js" class="icon-js">
+        <h4>JavaScript</h4>
+      </button>
+      <button>
+        <img src="assets/icons/icon-accessibility.svg" alt="accessibility" class="icon-accessibility">
+        <h4>Accessibility</h4>
+      </button>
+    </aside>
+    </article>
+    <!--Quiz-->
+    <article class="quiz">
+    <div class="quiz__left">
+      <div class="quiz__left__content">
+        <p>
+          Question <span>1</span> of <span>10</span>
+        </p>
+        <h3>What does HTML stand for?</h3>
+      </div>
+      <div class="quiz__left__progress-bar">
+        <span></span>
+      </div>
+    </div>
+    <div class="quiz__options">
+      <button class="quiz__options__option">
+        <span>A</span>
+        <h4>Hyper Text Markup Language</h4>
+      </button>
+      <button class="quiz__options__option correct">
+        <span>B</span>
+        <h4>Hyper Text Markup Language</h4>
+        <img src="assets/icons/icon-correct.svg" alt="correct">
+      </button>
+      <button class="quiz__options__option incorrect">
+        <span>C</span>
+        <h4>Hyper Text Markup Language</h4>
+        <img src="assets/icons/icon-incorrect.svg" alt="">
+      </button>
+      <button class="quiz__options__option">
+        <span>D</span>
+        <h4>Hyper Text Markup Language</h4>
+      </button>
+    </div>
+    </article>
+    <!--Result-->
+    <article class="result">
+      <h2 class="result__heading">
+        Quiz completed <br>
+        <span>You scored...</span>
+      </h2>
+      <aside class="result__body">
+        <div class="result__body__content">
+          <figure>
+            <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+            <figcaption>
+              <h1>HTML</h1>
+            </figcaption>
+          </figure>
+          <h2>1</h2>
+          <p>out of <span>10</span></p>
+        </div>
+        <button class="result__body__btn">Play Again</button>
+      </aside>
+    </article>
   </main>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
