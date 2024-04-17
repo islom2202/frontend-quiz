@@ -1,37 +1,28 @@
 @use "../abstracts/breakpoints" as *;
 @use "../abstracts/mixins" as *;
 @use '../abstracts/colors' as *;
+
 // mobile
-main{
+.result{
   padding-inline: map-get($mobile, padding-inline);
   margin-block: 4rem;
-  @include flex(10rem);
-  div{
-    @include flex(4rem);
-    flex-direction: column;
-    border: 1px solid;
-    width: fit-content;
-    h2 span{
-      font-weight: 600;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  &__heading span{
+    font-weight: 600;
   }
-  aside{
-    @include flex(2rem, column, stretch);
-    flex-grow: 1;
-    button{
-      @include flex(2rem, _, center);
+  &__body{
+    display:  grid;
+    &__content{
       border: 1px solid;
-      padding: 1rem 1.5rem;
-      border-radius: 1rem;
-      background-color: $white;
-      cursor: pointer;
     }
   }
 }
 
 // tablet
 @include response(map-get($tablet, width)){
- main{
+  .result{
     padding-inline: map-get($tablet, padding-inline);
     padding-block: 5rem;
   }
@@ -39,7 +30,7 @@ main{
 
 // desktop
 @include response(map-get($desktop, width)){
-  main{
+  .result{
     padding-inline: map-get($desktop, padding-inline);
   }
 }
