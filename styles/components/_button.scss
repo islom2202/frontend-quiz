@@ -1,0 +1,8 @@
+@use '../abstracts/colors' as *;
+.btn{
+  padding-block: 3rem;
+  color: $white;
+  background-color: $purple;
+  border-radius: 1.5rem;
+  cursor:pointer;
+}

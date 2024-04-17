@@ -13,9 +13,19 @@
     font-weight: 600;
   }
   &__body{
-    display:  grid;
+    display: grid;
+    gap: 2rem;
     &__content{
       border: 1px solid;
+      padding-block: 5rem;
+      @include flex(2rem, column, center);
+      border-radius: 1.5rem;
+      figure{
+        @include flex(3rem, _, center);
+        figcaption h1{
+          font-weight: 600;
+        }
+      }
     }
   }
 }
