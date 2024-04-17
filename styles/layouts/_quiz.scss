@@ -5,7 +5,6 @@
 // mobile
 .quiz{
   padding-inline: map-get($mobile, padding-inline);
-  margin-block: 4rem;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 5rem;
@@ -39,7 +38,7 @@
       border: 3px solid transparent;
       transition: 0.3s;
       background-color: $white;
-      span{
+      .variant{
         width: 5rem;
         aspect-ratio: 1/1;
         @include flex(_, _, center);
@@ -52,13 +51,13 @@
       }
       &:hover, &:focus{
         border-color: $purple;
-        span{
+        .variant{
           background: rgba($purple, .1);
           color: $purple;
           font-weight: 500;
         }
       }
-      &:focus span{
+      &:focus .variant{
           background: $purple;
           color: $white;
       }

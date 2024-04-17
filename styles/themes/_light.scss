@@ -2,4 +2,7 @@
 body{
   background-color: $light-background;
   color: $dark-background;
+  .box{
+    background-color: $white;
+  }
 }

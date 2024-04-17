@@ -2,4 +2,20 @@
 .dark{
   background-color: $dark-background;
   color: $white;
+  .box{
+    background-color: $dark-box;
+    color: $white;
+    &:hover .variant{
+      background-color: rgba($purple, .5);
+      color: $white;
+    }
+    &:focus .variant{
+          background: $purple;
+          color: $white;
+    }
+    .variant{
+      background-color: $white;
+      color: $dark-background;
+    }
+  }
 }
