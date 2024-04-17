@@ -84,6 +84,10 @@
         background-color: $red;
       }
     }
+    .submitPopup{
+      @include flex(2rem, _, center);
+      justify-content: center;
+    }
   }
 }
 
