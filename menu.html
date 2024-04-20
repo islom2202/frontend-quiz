@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="compiled/styles.css">
+  <title>Frontend Quiz</title>
+</head>
+<body>
+  <header class="header">
+    <figure>
+      <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+      <figcaption>
+        <h1>HTML</h1>
+      </figcaption>
+    </figure>
+    <div class="header__switcher">
+      <img src="assets/icons/icon-sun-dark.svg" alt="sun-icon" class="js-sun" draggable="false">
+      <div class="header__switcher__toggleWrapper">
+        <input type="checkbox" class="header__switcher__toggleWrapper__checkbox js-theme-toggler">
+        <span class="header__switcher__toggleWrapper__toggle"></span>
+      </div>
+      <img src="assets/icons/icon-moon-dark.svg" alt="moon-icon" class="js-moon" draggable="false">
+    </div>
+  </header>
+  <main>
+    <!--MENU-->
+    <article class="menu">
+      <div>
+        <h2>
+          Welcome to the <br>
+          <span>Frontend Quiz!</span>
+        </h2>
+        <p>
+          Pick a subject to get started.
+        </p>
+      </div>
+    <aside>
+      <button class="box">
+        <img src="assets/icons/icon-html.svg" alt="html" class="icon-html">
+        <h4>HTML</h4>
+      </button>
+      <button  class="box">
+        <img src="assets/icons/icon-css.svg" alt="css" class="icon-css">
+        <h4>CSS</h4>
+      </button>
+      <button  class="box">
+        <img src="assets/icons/icon-js.svg" alt="js" class="icon-js">
+        <h4>JavaScript</h4>
+      </button>
+      <button  class="box">
+        <img src="assets/icons/icon-accessibility.svg" alt="accessibility" class="icon-accessibility">
+        <h4>Accessibility</h4>
+      </button>
+    </aside>
+  </main>
+  <script type="module" src="js/menu.js"></script>
+</body>
+</html>

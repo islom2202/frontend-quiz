@@ -32,9 +32,7 @@
     }
   }
 }
-.invisible{
-  display: none;
-}
+
 // tablet
 @include response(map-get($tablet, width)){
   .result{

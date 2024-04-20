@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="compiled/styles.css">
+  <title>Frontend Quiz</title>
+</head>
+<body>
+  <header class="header">
+    <figure>
+      <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+      <figcaption>
+        <h1>HTML</h1>
+      </figcaption>
+    </figure>
+    <div class="header__switcher">
+      <img src="assets/icons/icon-sun-dark.svg" alt="sun-icon" class="js-sun" draggable="false">
+      <div class="header__switcher__toggleWrapper">
+        <input type="checkbox" class="header__switcher__toggleWrapper__checkbox js-theme-toggler">
+        <span class="header__switcher__toggleWrapper__toggle"></span>
+      </div>
+      <img src="assets/icons/icon-moon-dark.svg" alt="moon-icon" class="js-moon" draggable="false">
+    </div>
+  </header>
+  <main>
+    <!--Result-->
+    <article class="result invisible">
+      <h2 class="result__heading">
+        Quiz completed <br>
+        <span>You scored...</span>
+      </h2>
+      <aside class="result__body">
+        <div class="result__body__content box">
+          <figure>
+            <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+            <figcaption>
+              <h1>HTML</h1>
+            </figcaption>
+          </figure>
+          <h2>1</h2>
+          <p>out of <span>10</span></p>
+        </div>
+        <button class="btn">Play Again</button>
+      </aside>
+    </article>
+  </main>
+  <script type="module" src="js/result.js"></script>
+</body>
+</html>
