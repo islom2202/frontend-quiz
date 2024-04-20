@@ -87,10 +87,14 @@
     .submitPopup{
       @include flex(2rem, _, center);
       justify-content: center;
+      color: $red;
+      font-weight: 400;
     }
   }
 }
-
+.invisible{
+  display: none;
+}
 // tablet
 @include response(map-get($tablet, width)){
   .quiz{
