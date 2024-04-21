@@ -1,4 +1,4 @@
-import { switchTheme } from "./switcher.js";
+import switchTheme  from "./utils/switcher.js";
 document.querySelector(".js-theme-toggler").onclick = () => switchTheme()
 
 /*///////////

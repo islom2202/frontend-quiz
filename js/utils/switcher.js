@@ -1,4 +1,4 @@
-export const switchTheme = () => {
+const switchTheme = () => {
   const switcherState = document.querySelector(".js-theme-toggler")
   const sun = document.querySelector(".js-sun")
   const moon = document.querySelector(".js-moon")
@@ -13,3 +13,4 @@ export const switchTheme = () => {
     moon.setAttribute("src", "assets/icons/icon-moon-dark.svg")
   } 
 }
+export default switchTheme

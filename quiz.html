@@ -9,9 +9,9 @@
 <body>
   <header class="header">
     <figure>
-      <img src="assets/icons/icon-html.svg" alt="html" class="icon-html" draggable="false">
+      <img src="assets/icons/icon-html.svg" alt="html" class="js-quiz-icon" draggable="false">
       <figcaption>
-        <h1>HTML</h1>
+        <h1 class="js-quiz-name">HTML</h1>
       </figcaption>
     </figure>
     <div class="header__switcher">
@@ -25,11 +25,11 @@
   </header>
   <main>
     <!--Quiz-->
-    <article class="quiz invisible">
+    <article class="quiz">
     <div class="quiz__left">
       <div class="quiz__left__content">
         <p>
-          Question <span>1</span> of <span>10</span>
+          Question <span class="js-current-question">1</span> of <span class="js-all-questions">10</span>
         </p>
         <h3>What does HTML stand for?</h3>
       </div>
