@@ -18,4 +18,25 @@
       color: $dark-background;
     }
   }
+  .correct{
+       border-color: $green;
+       gap: 2rem;
+       position: relative;
+       display: grid;
+       grid-template-columns: 1fr 8fr 1fr;
+       align-items: center;
+       gap: 2rem;
+        .variant{
+          background: $green;
+          color: $white;
+          font-weight: 500;
+        }
+    }
+  .incorrect{
+      @extend .correct;
+      border-color: $red;
+      .variant{
+        background-color: $red;
+      }
+  }
 }

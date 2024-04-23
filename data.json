@@ -106,7 +106,7 @@
             "// this is a comment //",
             "/* this is a comment */",
             "-- this is a comment --",
-            "<!-- this is a comment -->"
+            "&lt;!--  this is a comment --&gt;"
           ],
           "answer": "/* this is a comment */"
         },
@@ -211,7 +211,7 @@
           "options": [
             "'This is a comment",
             "//This is a comment",
-            "<!--This is a comment-->",
+            "&lt;!--this is a comment--&gt;",
             "/* This is a comment */"
           ],
           "answer": "//This is a comment"

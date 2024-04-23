@@ -11,6 +11,7 @@
   &__left{
     @include flex(_, column);
     justify-content: space-between;
+    height: 80%;
     &__content{
       @include flex(2rem, column);
     }
@@ -29,10 +30,10 @@
   &__options{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
     &__option{
       @include flex(2rem, _, center);
-      padding: 1.5rem;
+      padding: 1rem 1.5rem;
       border-radius: 1rem;
       cursor: pointer;
       border: 3px solid transparent;
@@ -66,7 +67,12 @@
        border-color: $green;
        gap: 2rem;
        position: relative;
-        span{
+       display: grid;
+       grid-template-columns: 1fr 8fr 1fr;
+       align-items: center;
+       justify-items: start;
+       gap: 2rem;
+        .variant{
           background: $green;
           color: $white;
           font-weight: 500;
@@ -80,7 +86,7 @@
     .incorrect{
       @extend .correct;
       border-color: $red;
-      span{
+      .variant{
         background-color: $red;
       }
     }
@@ -90,6 +96,9 @@
       color: $red;
       font-weight: 400;
     }
+    .hidden{
+      visibility: hidden;
+    }
   }
 }
 
@@ -97,7 +106,11 @@
 @include response(map-get($tablet, width)){
   .quiz{
     padding-inline: map-get($tablet, padding-inline);
-    padding-block: 5rem;
+    padding-top: 2rem;
+
+    &__options button:nth-child(5){
+      margin-top: 2rem;
+    }
   }
 }
 
