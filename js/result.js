@@ -4,8 +4,8 @@ document.querySelector(".js-theme-toggler").onclick = () => switchTheme()
 
 
 // save data
-const scores = localStorage.getItem('scores')
-const currentQuiz =  JSON.parse(localStorage.getItem('currentQuiz'))
+const scores = sessionStorage.getItem('scores')
+const currentQuiz =  JSON.parse(sessionStorage.getItem('currentQuiz'))
 console.log(currentQuiz);
 
 // generate html

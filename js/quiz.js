@@ -9,7 +9,7 @@ let currentQuiz;
 async function saveData(){
     let res = await fetch("data.json")
     let data = await res.json()
-    currentQuiz = data.quizzes.find((item) => item.title == localStorage.getItem("quiz"))
+    currentQuiz = data.quizzes.find((item) => item.title == sessionStorage.getItem("quiz"))
 }
 
 // generate html
@@ -48,6 +48,8 @@ function generateBody(){
     </div>
   `
   function generateOptions(){
+    // randomize options
+    currentQuiz.questions[questionIndex].options.sort(_ => Math.random() - 0.5)
     return currentQuiz.questions[questionIndex].options.map((option, i) => 
       `<button class="quiz__options__option js-option box">
         <span class="variant">${['A', 'B', 'C', 'D'][i]}</span>
@@ -136,7 +138,7 @@ function nextQuestion(){
   }else seeResults()
 }
 function seeResults(){
-  localStorage.setItem("scores", correctAnswers)
-  localStorage.setItem('currentQuiz', JSON.stringify(currentQuiz))
+  sessionStorage.setItem("scores", correctAnswers)
+  sessionStorage.setItem('currentQuiz', JSON.stringify(currentQuiz))
   window.location.href = "result.html"
 }
