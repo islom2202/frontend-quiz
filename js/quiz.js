@@ -35,7 +35,7 @@ function generateBody(){
         <h3>${currentQuiz.questions[questionIndex].question}</h3>
       </div>
       <div class="quiz__left__progress-bar">
-        <span></span>
+        <span class="js-progress-bar"></span>
       </div>
     </div>
     <div class="quiz__options">
@@ -55,14 +55,23 @@ function generateBody(){
       </button>`
     )
   }
-
+  
   const options = document.querySelectorAll(".js-option")
   options.forEach((e) => (e.onclick = () => selectAnswer(options, e)))
   const submitBtn = document.querySelector(".js-submit-btn")
-  submitBtn.onclick = (e) => submitBtn.innerText != "Next Question" ? submitAnswer(e) : nextQuestion(e)
+  submitBtn.onclick = (e) => {
+    submitBtn.innerText != "Next Question" &&
+    submitBtn.innerText != "See Results"
+      ? submitAnswer(e)
+      : nextQuestion()
+  }
+  const progressBar = document.querySelector(".js-progress-bar")
+  progressBar.style.width = `${
+    questionIndex / (currentQuiz.questions.length * 0.01)
+  }%`
 }
 
-// make generated html interactive
+// make html interactive
 function selectAnswer(options, option) {
   options.forEach((e) => e.classList.remove("selected"))
   option.classList.add("selected")
@@ -77,7 +86,7 @@ function submitAnswer(e){
        option.querySelector("img")?.remove()
        highlightSelected()
        hightlightAnswer()
-       e.target.innerText = "Next Question"
+       e.target.innerText = questionIndex < currentQuiz.questions.length - 1? "Next Question" : 'See Results'
        function highlightSelected() {
          if (option.classList.contains("selected")) {
            if (
@@ -107,11 +116,9 @@ function submitAnswer(e){
          }
        }
      })
-     const submitPopup = document.querySelector(".submitPopup")
-     submitPopup.classList.add("hidden")
+     document.querySelector(".submitPopup").classList.add("hidden")
   }else{
-    const submitPopup = document.querySelector(".submitPopup")
-    submitPopup.classList.remove('hidden')
+     document.querySelector(".submitPopup").classList.remove('hidden')
   }
   function ifAnswerSelected() {
     for (let i = 0; i < options.length; i++) {
@@ -122,48 +129,14 @@ function submitAnswer(e){
     return false
   }
 }
-function nextQuestion(e){
-  if(questionIndex < currentQuiz.questions.length){
-    questionIndex += 1
+function nextQuestion(){
+  if(questionIndex < currentQuiz.questions.length - 1){
+    questionIndex += 1;
     generateBody()
-    e.target.innerText = `Submit Answer`
-  }else{
-    let results = {
-      correctAnswers,
-      questionsQuantity: currentQuiz.questions.length
-    }
-    e.target.innerText = `See Results`
-    localStorage.setItem('scores', JSON.stringify(results))
-    window.location.href = "result.html"
-  }
+  }else seeResults()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let num = -1
-// let arr = [1,2,3]
-// let currIndex = arr[num]
-// const defineCurrentIndex = () => currIndex = arr[num]
-// const increaseIndex = () => {
-//   num += 1;
-//   return defineCurrentIndex()
-// } 
-// console.log(increaseIndex());
-// console.log(increaseIndex())
-// console.log(increaseIndex())
-
+function seeResults(){
+  localStorage.setItem("scores", correctAnswers)
+  localStorage.setItem('currentQuiz', JSON.stringify(currentQuiz))
+  window.location.href = "result.html"
+}

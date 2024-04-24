@@ -20,10 +20,13 @@
       height: 2rem;
       display: grid;
       grid-template-columns: 1fr;
+      border-radius: 1rem;
+      background-color: rgba($gray, .2);
       span{
+        margin: .3rem;
         width: 20%;
         background-color: $purple;
-        border-radius: 1rem;
+        border-radius: inherit;
       }
     }
   }
