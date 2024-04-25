@@ -1,4 +1,3 @@
-
 const switcher = document.querySelector(".js-theme-toggler")
 const body = document.querySelector("body")
 const sun = document.querySelector(".js-sun")
