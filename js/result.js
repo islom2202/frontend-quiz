@@ -27,4 +27,4 @@ resultBody.innerHTML = `
 // make html interactive
 const playAgainBtn = document.querySelector(".js-result-btn")
 playAgainBtn.onclick = () => window.history.back();
-resultHeader.onclick = () => window.location.href = 'menu.html'
+resultHeader.onclick = () => navigateToMenu()

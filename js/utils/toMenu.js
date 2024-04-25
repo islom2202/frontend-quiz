@@ -1,2 +1,2 @@
-const navigateToMenu = () => window.location.href = 'menu.html';
+const navigateToMenu = () => window.location.href = 'index.html';
 export default navigateToMenu;
