@@ -3,26 +3,25 @@
 
 $fontsizes:(
   h1: clamp(2.4rem, 3vw, 2.8rem),
-  h2: clamp(4rem, 6vw, 6.4rem),
-  h3: clamp(3rem, 3vw, 3.5rem),
-  // i: clamp(3rem, 3vw, 3.6rem),
-  h4: clamp(2.6rem, 2vw, 2.6rem),
-  button: clamp(2.6rem, 2vw, 2.6rem),
-  p: 2rem,
-  input: 2rem,
-  select: 2rem,
-  option: 2rem,
+  h2: clamp(3.6rem, 4vw, 6.4rem),
+  h3: clamp(2.6rem, 3vw, 3.5rem),
+  h4: clamp(2rem, 2vw, 2.6rem),
+  button: clamp(1.8rem, 2vw, 2.6rem),
+  p: 1.8rem,
+  select: 1.8rem,
+  option: 1.8rem,
   span: inherit
 );
 
 @each $font, $size in $fontsizes {
   #{$font}{
     font-size: $size;
+    font-weight: 300;
   }
 }
 h1, h2{
   font-weight: 300;
 }
 h4{
-  font-weight: 500;
+  font-weight: 400;
 }

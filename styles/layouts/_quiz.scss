@@ -6,18 +6,19 @@
 .quiz{
   padding-inline: map-get($mobile, padding-inline);
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-block: 4rem;
   &__left{
-    @include flex(_, column);
+    @include flex(2rem, column);
     justify-content: space-between;
-    height: 80%;
+    padding-top: 2rem;
     &__content{
       @include flex(2rem, column);
     }
     &__progress-bar{
       width: 100%;
-      height: 2rem;
+      height: 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
       border-radius: 1rem;
@@ -33,7 +34,7 @@
   &__options{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.2rem;
     &__option{
       @include flex(2rem, _, center);
       padding: 1rem 1.5rem;
@@ -65,6 +66,9 @@
           background: $purple;
           color: $white;
       }
+    }
+    button:nth-child(5){
+      margin-top: 2rem;
     }
     .correct{
        border-color: $green;
@@ -109,10 +113,13 @@
 @include response(map-get($tablet, width)){
   .quiz{
     padding-inline: map-get($tablet, padding-inline);
-    padding-top: 2rem;
-
-    &__options button:nth-child(5){
-      margin-top: 2rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    &__left{
+      height: 77%;
+    }
+    &__options{
+      gap: .5rem;
     }
   }
 }
@@ -121,5 +128,8 @@
 @include response(map-get($desktop, width)){
   .quiz{
     padding-inline: map-get($desktop, padding-inline);
+    &__left__progress-bar{
+     height: 2rem; 
+    }
   }
 }

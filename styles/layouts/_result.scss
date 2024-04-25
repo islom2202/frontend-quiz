@@ -6,8 +6,9 @@
 .result{
   padding-inline: map-get($mobile, padding-inline);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-block: 5rem;
   &__heading span{
     font-weight: 600;
   }
@@ -36,7 +37,7 @@
 @include response(map-get($tablet, width)){
   .result{
     padding-inline: map-get($tablet, padding-inline);
-    padding-block: 5rem;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -44,5 +45,6 @@
 @include response(map-get($desktop, width)){
   .result{
     padding-inline: map-get($desktop, padding-inline);
+    gap: 5rem;
   }
 }
