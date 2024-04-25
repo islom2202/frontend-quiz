@@ -1,17 +1,6 @@
 // utils
-import switchTheme from "./utils/switcher.js"
 import navigateToMenu from "./utils/toMenu.js"
-document.querySelector(".js-theme-toggler").onclick = () => switchTheme()
 document.querySelector(".js-quiz-label").onclick = () => navigateToMenu()
-
-// check session storage for theme mode
-if(sessionStorage.getItem("dark")){
-  document.querySelector("body").classList.add("dark")
-  document.querySelector(".js-theme-toggler").checked = true
-}else{
-  document.querySelector("body").classList.remove("dark")
-  document.querySelector(".js-theme-toggler").checked = false
-}
 
 saveData()
   .then(() => generateHeader())

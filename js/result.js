@@ -1,20 +1,10 @@
 // utils
-import switchTheme from "./utils/switcher.js"
 import navigateToMenu from "./utils/toMenu.js"
-document.querySelector(".js-theme-toggler").onclick = () => switchTheme()
 document.querySelector(".js-quiz-label").onclick = () => navigateToMenu()
-
-// check session storage for theme mode
-if(sessionStorage.getItem("dark")){
-  document.querySelector("body").classList.add("dark")
-}else{
-  document.querySelector("body").classList.remove("dark")
-}
 
 // save data
 const scores = sessionStorage.getItem('scores')
 const currentQuiz =  JSON.parse(sessionStorage.getItem('currentQuiz'))
-console.log(currentQuiz);
 
 // generate html
 const resultHeader = document.querySelector(".js-quiz-label")
