@@ -7,10 +7,12 @@ const switchTheme = () => {
     body.classList.add('dark');
     sun.setAttribute("src", "assets/icons/icon-sun-light.svg")
     moon.setAttribute("src", "assets/icons/icon-moon-light.svg")
+    sessionStorage.setItem('dark', true)
   }else{
     body.classList.remove("dark")
     sun.setAttribute("src", "assets/icons/icon-sun-dark.svg")
     moon.setAttribute("src", "assets/icons/icon-moon-dark.svg")
+    sessionStorage.removeItem("dark")
   } 
 }
 export default switchTheme
