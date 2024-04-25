@@ -1,27 +1,35 @@
-document.querySelector(".js-theme-toggler").onclick = () => switchTheme()
+
+const switcher = document.querySelector(".js-theme-toggler")
+const body = document.querySelector("body")
+const sun = document.querySelector(".js-sun")
+const moon = document.querySelector(".js-moon")
+
+// when page reloads it looks for session storage to switch themes
+sessionStorage.getItem("dark") ? toDark() : toLight();
+
+// when we click on switcher it switches themes 
+switcher.onclick = () => switchTheme()
 function switchTheme(){
-  const switcherState = document.querySelector(".js-theme-toggler")
-  const sun = document.querySelector(".js-sun")
-  const moon = document.querySelector(".js-moon")
-  const body = document.querySelector("body")
-  if (switcherState.checked) {
-    body.classList.add("dark")
-    sun.setAttribute("src", "assets/icons/icon-sun-light.svg")
-    moon.setAttribute("src", "assets/icons/icon-moon-light.svg")
-    sessionStorage.setItem("dark", true)
-  } else {
-    body.classList.remove("dark")
-    sun.setAttribute("src", "assets/icons/icon-sun-dark.svg")
-    moon.setAttribute("src", "assets/icons/icon-moon-dark.svg")
-    sessionStorage.removeItem("dark")
+  if(switcher.checked){
+    sessionStorage.setItem("dark", true);
+    toDark()
+  }else{
+    sessionStorage.removeItem("dark");
+    toLight()
   }
 }
-// check session storage for theme mode
-if (sessionStorage.getItem("dark")) {
-  document.querySelector("body").classList.add("dark")
-  document.querySelector(".js-theme-toggler").checked = true
-} else {
-  document.querySelector("body").classList.remove("dark")
-  document.querySelector(".js-theme-toggler").checked = false
+
+function toDark(){
+  body.classList.add("dark")
+  switcher.checked = true
+  sun.setAttribute("src", "assets/icons/icon-sun-light.svg")
+  moon.setAttribute("src", "assets/icons/icon-moon-light.svg")
 }
+function toLight() {
+  body.classList.remove("dark")
+  switcher.checked = false
+  sun.setAttribute("src", "assets/icons/icon-sun-dark.svg")
+  moon.setAttribute("src", "assets/icons/icon-moon-dark.svg")
+}
+
 
